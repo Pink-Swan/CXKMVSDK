@@ -5,7 +5,7 @@ GIT_USER="pink"
 GIT_EMAIL="pink@gmail.com"
 
 # 获取当前分支名
-BRANCH="main"
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 # 检查远程是否有更改
 git fetch origin $BRANCH
@@ -25,7 +25,7 @@ if [ $LOCAL = $REMOTE ]; then
     
     # 添加文件并提交
     git add .
-    git commit -m "Your commit message"
+    git commit -m "Updated"
 
     # 提交到远程仓库
     git push origin $BRANCH
