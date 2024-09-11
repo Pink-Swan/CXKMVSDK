@@ -1,0 +1,23 @@
+PODS:
+  - CXKMVAPIKit (0.0.1):
+    - ZipArchive
+  - ZipArchive (1.4.0)
+
+DEPENDENCIES:
+  - CXKMVAPIKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - ZipArchive
+
+EXTERNAL SOURCES:
+  CXKMVAPIKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CXKMVAPIKit: f9fe9ab99bb83194f415bdda2e1af6f4c83647d5
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
+
+PODFILE CHECKSUM: 2cb5a4adb7e8ef33e5564aa3cf304b2414c58402
+
+COCOAPODS: 1.15.2
