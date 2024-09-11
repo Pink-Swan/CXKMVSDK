@@ -1,0 +1,266 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name CXKMVAPIKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AdSupport
+@_exported import CXKMVAPIKit
+import CoreTelephony
+import CryptoKit
+import Foundation
+import HandyJSON
+import Swift
+import UIKit
+import ZipArchive
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension CXKMVAPIKit.CXKMVNetworkAPI {
+  @objc public static func fetchAllConfig(configUrl: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc public static func auth(completion: (() -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func fetchAll(page: Swift.Int = 1, pageSize: Swift.Int = 30, type: Swift.String? = CXKMVFilmType.all.value, genre: Swift.String? = nil, country: Swift.String? = nil, release: Swift.String? = nil, orderby: Swift.String? = nil, completion: ((CXKMVAPIKit.CXKMVAPIAllDatas) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func search(page: Swift.Int = 1, pageSize: Swift.Int = 24, keyword: Swift.String? = nil, completion: ((CXKMVAPIKit.CXKMVAPISearchDatas) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func filmDetail(id: Swift.String, type: CXKMVAPIKit.CXKMVFilmType, completion: CXKMVAPIKit.CXKMVAnyBlock? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func movieDetail(id: Swift.String, completion: ((CXKMVAPIKit.CXKMVMovieContentModel) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func tvDetail(id: Swift.String, completion: ((CXKMVAPIKit.CXKMVTVContentModel) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func tvSeasonInfo(id: Swift.String, completion: ((CXKMVAPIKit.CXKMVTVSeasonModel) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func tvEpisodeUrl(id: Swift.String, completion: (([CXKMVAPIKit.CXKMVSourceQualityModel]) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func subtitle(id: Swift.String, type: CXKMVAPIKit.CXKMVFilmType, completion: (([CXKMVAPIKit.CXKMVSubtitleModel]) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+  @objc public static func downloadSubtitle(_ model: CXKMVAPIKit.CXKMVSubtitleModel, completion: ((Foundation.URL) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
+}
+public func cxk_randomGenerateStrings(count: Swift.Int) -> Swift.String
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVTool : ObjectiveC.NSObject {
+  @objc public static let share: CXKMVAPIKit.CXKMVTool
+  @objc public var subtitlePath: Foundation.URL {
+    @objc get
+    @objc set
+  }
+  @objc public var zipPath: Foundation.URL {
+    @objc get
+    @objc set
+  }
+  @objc public static func chooseDefaulSubtitle(_ subtitles: [CXKMVAPIKit.CXKMVSubtitleModel]) -> CXKMVAPIKit.CXKMVSubtitleModel?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class CXKBaseModel : ObjectiveC.NSObject, HandyJSON.HandyJSON {
+  @objc required override dynamic public init()
+  public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public enum CXKMVFilmType : Swift.Int {
+  case movie = 1
+  case tv = 2
+  case all = 100
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CXKMVAPIKit.CXKMVFilmType {
+  public var value: Swift.String {
+    get
+  }
+}
+@objc public enum CXKMVFilterType : Swift.Int {
+  case type
+  case genre
+  case release
+  case country
+  case order
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVAPIAllDatas : CXKMVAPIKit.CXKBaseModel {
+  @objc public var recommends: [CXKMVAPIKit.CXKMVRecommendModel]
+  @objc public var filters: CXKMVAPIKit.CXKMVFiltersModel
+  @objc public var data_type: Swift.String
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVFiltersModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var orderbys: [CXKMVAPIKit.CXKMVFilterModel]
+  @objc public var genres: [CXKMVAPIKit.CXKMVFilterModel]
+  @objc public var pubs: [CXKMVAPIKit.CXKMVFilterModel]
+  @objc public var types: [CXKMVAPIKit.CXKMVFilterModel]
+  @objc public var countrys: [CXKMVAPIKit.CXKMVFilterModel]
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVFilterModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var title: Swift.String
+  @objc public var id: Swift.String
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVRecommendModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var id: Swift.String
+  @objc public var rate: Swift.String
+  @objc public var title: Swift.String
+  @objc public var genres: [Swift.String]
+  @objc public var board: Swift.String
+  @objc public var i_117: Swift.String
+  @objc public var i_116: Swift.String
+  @objc public var cover: Swift.String
+  @objc public var m_type: Swift.String
+  @objc public var data_type: Swift.String
+  @objc public var quality: Swift.String
+  @objc public var i_177: Swift.String
+  @objc public var order: Swift.Int
+  @objc public var seasons_epis: Swift.String
+  @objc public var new: Swift.String
+  @objc public var i_329: Swift.String
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVAPISearchDatas : CXKMVAPIKit.CXKBaseModel {
+  @objc public var contents: [CXKMVAPIKit.CXKMVFilmModel]
+  @objc public var contents2: [CXKMVAPIKit.CXKMVFilmModel]
+  @objc public var z_info: [Swift.String : Any]
+  @objc public var keywords: [Swift.String]
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVFilmModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var id: Swift.String
+  @objc public var title: Swift.String
+  @objc public var cover: Swift.String
+  @objc public var rate: Swift.String
+  @objc public var data_type: Swift.String
+  @objc public var year: Swift.String
+  @objc public var stars: [Swift.String]
+  @objc public var genres: [Swift.String]
+  @objc public var country: Swift.String
+  @objc public var quality: Swift.String
+  @objc public var seasons_epis: Swift.String
+  @objc public var new: Swift.String
+  @objc public var best: Swift.Int
+  @objc public var board: Swift.String
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc public func toRecommendModel() -> CXKMVAPIKit.CXKMVRecommendModel
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVBaseContentModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var id: Swift.String
+  @objc public var title: Swift.String
+  @objc public var cover: Swift.String
+  @objc public var rate: Swift.String
+  @objc public var time: Swift.String
+  @objc public var genres: [Swift.String]
+  @objc public var country: Swift.String
+  @objc public var des: Swift.String
+  @objc public var type: CXKMVAPIKit.CXKMVFilmType
+  @objc public var source: Swift.String
+  @objc public var quality: Swift.String
+  @objc public var like: Swift.Int
+  @objc public var unlike: Swift.Int
+  @objc public var stars: [CXKMVAPIKit.CXKMVStarModel]
+  @objc public var relations: [CXKMVAPIKit.CXKMVContentRelatedModel]
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVContentRelatedModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var data_type: Swift.String
+  @objc public var name: Swift.String
+  @objc public var recommends: [CXKMVAPIKit.CXKMVRecommendModel]
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVMovieContentModel : CXKMVAPIKit.CXKMVBaseContentModel {
+  @objc public var qualitys: [CXKMVAPIKit.CXKMVSourceQualityModel]
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVSourceQualityModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var title: Swift.String
+  @objc public var playUrl: Swift.String
+  @objc public var short_title: Swift.String {
+    @objc get
+  }
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVStarModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var id: Swift.String
+  @objc public var title: Swift.String
+  @objc public var cover: Swift.String
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVTVContentModel : CXKMVAPIKit.CXKMVBaseContentModel {
+  @objc public var seasons: [CXKMVAPIKit.CXKMVTVSeasonModel]
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVTVSeasonModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var title: Swift.String
+  @objc public var id: Swift.String
+  @objc public var episodes: [CXKMVAPIKit.CXKMVTVEpisodeModel]
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVTVEpisodeModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var title: Swift.String
+  @objc public var id: Swift.String
+  @objc public var order: Swift.Int
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVSubtitleModel : CXKMVAPIKit.CXKBaseModel {
+  @objc public var short_id: Swift.String
+  @objc public var name: Swift.String
+  @objc public var lang: Swift.String
+  @objc public var sub: Swift.String
+  override public func mapping(mapper: HandyJSON.HelpingMapper)
+  @objc required dynamic public init()
+  @objc deinit
+}
+extension Swift.String {
+  public var filmType: CXKMVAPIKit.CXKMVFilmType {
+    get
+  }
+  public var isNew: Swift.Bool {
+    get
+  }
+}
+public typealias CXKMVAnyBlock = (_ value: Any?) -> ()
+public typealias CXKMVErrorBlock = (_ error: (any Swift.Error)?) -> ()
+public typealias HJCompletionBlock<T> = (_ result: CXKMVAPIKit.CXKMVResult<T>) -> Swift.Void
+public enum CXKMVResult<T> {
+  case success(T?)
+  case failure((any Swift.Error)?)
+}
+public struct CXKMVError {
+  public let status: Swift.Int
+  public let msg: Swift.String?
+  public var error: Foundation.NSError {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class CXKMVNetworkAPI : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension CXKMVAPIKit.CXKMVFilmType : Swift.Equatable {}
+extension CXKMVAPIKit.CXKMVFilmType : Swift.Hashable {}
+extension CXKMVAPIKit.CXKMVFilmType : Swift.RawRepresentable {}
+extension CXKMVAPIKit.CXKMVFilterType : Swift.Equatable {}
+extension CXKMVAPIKit.CXKMVFilterType : Swift.Hashable {}
+extension CXKMVAPIKit.CXKMVFilterType : Swift.RawRepresentable {}

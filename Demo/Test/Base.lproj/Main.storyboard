@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="0yK-A2-lha">
+            <objects>
+                <viewController id="uJ2-XP-BqK" customClass="ViewController" customModule="MVSDKCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P4w-FC-wEY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ju2-bt-iIt">
+                                <rect key="frame" x="20" y="79" width="353" height="719"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ry9-wN-tAO">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="164.66666666666666"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFV-Ge-mfN">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="164.66666666666666"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Categroys &amp; Films"/>
+                                                <connections>
+                                                    <action selector="allBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="wuu-RF-vQH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HF-yz-ry8">
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="164.66666666666666"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="LmT-QT-dQI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="not-s4-OW4">
+                                        <rect key="frame" x="0.0" y="184.66666666666669" width="353" height="165"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vr-Tj-BeH">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="165"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Movie Details"/>
+                                                <connections>
+                                                    <action selector="movieBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="dQf-Lw-imI"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4J6-Bm-S9m">
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="165"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDv-2B-gqx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="166.33333333333334" height="41.666666666666664"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="TV Details"/>
+                                                        <connections>
+                                                            <action selector="tvBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="SNo-25-ggH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXh-vt-1zE">
+                                                        <rect key="frame" x="0.0" y="61.666666666666629" width="166.33333333333334" height="41.666666666666657"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="TV Season Details"/>
+                                                        <connections>
+                                                            <action selector="tvSeassonBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="oaZ-95-St8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6D2-lD-wcm">
+                                                        <rect key="frame" x="0.0" y="123.33333333333333" width="166.33333333333334" height="41.666666666666671"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="TV Epis Play Url"/>
+                                                        <connections>
+                                                            <action selector="tvEpisBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="M7h-G8-IeD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8Xb-ea-ThN">
+                                        <rect key="frame" x="0.0" y="369.66666666666669" width="353" height="164.66666666666669"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67L-BZ-dbs">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="72.333333333333329"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Film Subtitles"/>
+                                                <connections>
+                                                    <action selector="subtitleBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="NqO-dz-WVQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChV-X5-0W2">
+                                                <rect key="frame" x="0.0" y="92.333333333333314" width="353" height="72.333333333333314"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Download Subtitle"/>
+                                                <connections>
+                                                    <action selector="downloadSubtitleBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="aiI-he-DR5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4fL-1I-NiL">
+                                        <rect key="frame" x="0.0" y="554.33333333333337" width="353" height="164.66666666666663"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-J9-hlh">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwu-DR-DLr">
+                                                <rect key="frame" x="0.0" y="20.333333333333258" width="353" height="144.33333333333334"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Configs"/>
+                                                <connections>
+                                                    <action selector="configBtnClick:" destination="uJ2-XP-BqK" eventType="touchUpInside" id="BG7-KO-A3W"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V6h-Hn-IW1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ju2-bt-iIt" firstAttribute="top" secondItem="V6h-Hn-IW1" secondAttribute="top" constant="20" id="fdU-T7-Jyo"/>
+                            <constraint firstItem="V6h-Hn-IW1" firstAttribute="bottom" secondItem="ju2-bt-iIt" secondAttribute="bottom" constant="20" id="g19-8B-szf"/>
+                            <constraint firstItem="ju2-bt-iIt" firstAttribute="leading" secondItem="V6h-Hn-IW1" secondAttribute="leading" constant="20" id="oTU-fV-sfd"/>
+                            <constraint firstItem="V6h-Hn-IW1" firstAttribute="trailing" secondItem="ju2-bt-iIt" secondAttribute="trailing" constant="20" id="twg-xt-g7h"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LM1-pX-d3I" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

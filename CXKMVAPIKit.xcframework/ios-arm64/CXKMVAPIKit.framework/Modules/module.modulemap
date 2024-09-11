@@ -1,0 +1,11 @@
+framework module CXKMVAPIKit {
+  umbrella header "CXKMVAPIKit.h"
+  export *
+
+  module * { export * }
+}
+
+module CXKMVAPIKit.Swift {
+  header "CXKMVAPIKit-Swift.h"
+  requires objc
+}
