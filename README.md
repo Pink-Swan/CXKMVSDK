@@ -24,7 +24,6 @@ Add the following line to your Podfile:
 
 ```
 pod 'CXKMVAPIKit', :git => 'https://github.com/Pink-Swan/CXKMVSDK.git'
-pod 'HandyJSON', :git => 'https://github.com/Pink-Swan/HandyJSON.git'
 ```
 
 Then, run the following command:
