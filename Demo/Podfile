@@ -17,6 +17,6 @@ target 'Test' do
 
   # Pods for Test
   pod 'CXKMVAPIKit', :path => '../'#:git => 'https://github.com/Pink-Swan/CXKMVSDK.git'
-  pod 'HandyJSON', :git => 'https://github.com/Pink-Swan/HandyJSON.git'
+#  pod 'HandyJSON2', :git => 'https://github.com/Pink-Swan/HandyJSON.git'
 
 end

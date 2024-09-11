@@ -1,10 +1,3 @@
-//
-//  CXKMVAPIKit.h
-//  CXKMVAPIKit
-//
-//  Created by Ghost on 2024/09/10.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for CXKMVAPIKit.

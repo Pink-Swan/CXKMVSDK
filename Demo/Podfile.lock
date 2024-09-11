@@ -1,12 +1,10 @@
 PODS:
   - CXKMVAPIKit (0.0.1):
     - ZipArchive
-  - HandyJSON (5.0.4-beta)
   - ZipArchive (1.4.0)
 
 DEPENDENCIES:
   - CXKMVAPIKit (from `../`)
-  - HandyJSON (from `https://github.com/Pink-Swan/HandyJSON.git`)
 
 SPEC REPOS:
   trunk:
@@ -15,19 +13,11 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CXKMVAPIKit:
     :path: "../"
-  HandyJSON:
-    :git: https://github.com/Pink-Swan/HandyJSON.git
-
-CHECKOUT OPTIONS:
-  HandyJSON:
-    :commit: 9d0ce8df313fddff4432bc350f2869f0b6454eb9
-    :git: https://github.com/Pink-Swan/HandyJSON.git
 
 SPEC CHECKSUMS:
   CXKMVAPIKit: f9fe9ab99bb83194f415bdda2e1af6f4c83647d5
-  HandyJSON: a9c67202df97805a0ba4a00e30b50e9a30ac28f3
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: d3234f4d843ea91119bea7d6c32e4a847063ec11
+PODFILE CHECKSUM: 2cb5a4adb7e8ef33e5564aa3cf304b2414c58402
 
 COCOAPODS: 1.15.2
