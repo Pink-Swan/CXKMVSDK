@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CXKMVAPIKit'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Overseas Movie & TV Network Request SDK'
   s.description      = <<-DESC
 The Overseas Movie & TV Network Request SDK provides an easy-to-use network request solution designed for accessing movie and TV content from overseas servers. This SDK is optimized for speed, efficiency, and secure data transmission.
