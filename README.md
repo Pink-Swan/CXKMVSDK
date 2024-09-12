@@ -32,12 +32,13 @@ Then, run the following command:
 
 ### [TG Group](https://t.me/cxkmvsdk)
 
-## 1. Classification and Movie List
+## Interface
+### 1. Classification and Movie List
 
 > This interface returns all supported query conditions and recommended movie lists. You can also query the movie data in pages according to the conditions.
 
-### 1.1 Parameters
-#### Condition (optional)
+#### 1.1 Parameters
+##### Condition (optional)
 - **type**: `all | movie | tv`
 - **genre**
 - **country**
@@ -45,7 +46,7 @@ Then, run the following command:
 - **orderby**
 - **page**
 
-### 1.2 Example
+#### 1.2 Example
 ```swift
 CXKMVNetworkAPI.fetchAll(page: 1, type:CXKMVFilmType.all.value, genre: "", country: "", release: "", orderby: "") { value in
     debugPrint("all result: \(value)")
@@ -81,15 +82,15 @@ CXKMVNetworkAPI.fetchAll(page: 1, type:CXKMVFilmType.all.value, genre: "", count
     }
 </details>
 
-## 2. Search
+### 2. Search
 
 > This interface allows you to search for related film and television content based on keywords and supports paging.
 
-### 2.1 Parameters (optional)
+#### 2.1 Parameters (optional)
 - **page**: paging page number (default value: 1)
 - **keyword**: search keyword (optional)
 
-### 2.2 Examples
+#### 2.2 Examples
 
 ```swift
 CXKMVNetworkAPI.search(page: 1, keyword: "reacher") { value in
@@ -109,14 +110,14 @@ CXKMVNetworkAPI.search(page: 1, keyword: "reacher") { value in
     }
 </details>
 
-## 3. Movie Details
+### 3. Movie Details
 
 > Get detailed information of a movie based on the movie ID.
 
-### 3.1 Parameters
+#### 3.1 Parameters
 - **id**: unique identifier of the movie
 
-### 3.2 Example
+#### 3.2 Example
 
 ```swift
 CXKMVNetworkAPI.movieDetail(id: "12592") { value in
@@ -160,14 +161,14 @@ CXKMVNetworkAPI.movieDetail(id: "12592") { value in
 
 ---
 
-## 4. TV series details
+### 4. TV series details
 
 > Get detailed information of a TV series based on the TV series ID.
 
-### 4.1 Parameters
+#### 4.1 Parameters
 - **id**: unique identifier of the TV series
 
-### 4.2 Examples
+#### 4.2 Examples
 
 ```swift
 CXKMVNetworkAPI.tvDetail(id: "1010343") { value in
@@ -213,14 +214,14 @@ CXKMVNetworkAPI.tvDetail(id: "1010343") { value in
 
 ---
 
-## 5. TV Season Information
+### 5. TV Season Information
 
 > Get detailed information about a specified season based on a TV series ID.
 
-### 5.1 Parameters
+#### 5.1 Parameters
 - **id**: unique identifier of a TV series
 
-### 5.2 Examples
+#### 5.2 Examples
 
 ```swift
 CXKMVNetworkAPI.tvSeasonInfo(id: "13469") { value in
@@ -251,14 +252,14 @@ CXKMVNetworkAPI.tvSeasonInfo(id: "13469") { value in
 
 ---
 
-## 6. TV Series Playback Link
+### 6. TV Series Playback Link
 
 > Get the available playback link based on the TV series ID.
 
-### 6.1 Parameters
+#### 6.1 Parameters
 - **id**: Unique identifier of the TV series
 
-### 6.2 Example
+#### 6.2 Example
 
 ```swift
 CXKMVNetworkAPI.tvEpisodeUrl(id: "178668") { value in
@@ -280,15 +281,15 @@ CXKMVNetworkAPI.tvEpisodeUrl(id: "178668") { value in
 
 ---
 
-## 7. Subtitle Information
+### 7. Subtitle Information
 
 > Get available subtitle information based on the movie ID and type.
 
-### 7.1 Parameters
+#### 7.1 Parameters
 - **id**: unique identifier of the movie
 - **type**: movie type (movie or TV series)
 
-### 7.2 Examples
+#### 7.2 Examples
 
 ```swift
 CXKMVNetworkAPI.subtitle(id: "12592", type: .movie) { value in
@@ -312,14 +313,14 @@ CXKMVNetworkAPI.subtitle(id: "12592", type: .movie) { value in
 
 ---
 
-## 8. Download subtitle file
+### 8. Download subtitle file
 
 > Download the specified subtitle file.
 
-### 8.1 Parameters
+#### 8.1 Parameters
 - **model**: subtitle model
 
-### 8.2 Example
+#### 8.2 Example
 
 ```swift
 CXKMVNetworkAPI.downloadSubtitle(subtitleModel) { url in
@@ -329,3 +330,14 @@ CXKMVNetworkAPI.downloadSubtitle(subtitleModel) { url in
 }
 ```
 - **Results**: The path where the downloaded characters are saved
+
+## Update
+### 0.0.2
+```
+1. Network request update: Bypass cache, fetch latest data.
+```
+
+### 0.0.1
+```
+1. The first version, basic function support.
+```
