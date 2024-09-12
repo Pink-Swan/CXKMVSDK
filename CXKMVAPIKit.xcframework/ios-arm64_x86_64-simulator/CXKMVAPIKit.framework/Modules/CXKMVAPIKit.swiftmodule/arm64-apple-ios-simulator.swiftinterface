@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CXKMVAPIKit
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CXKMVAPIKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AdSupport
 @_exported import CXKMVAPIKit
 import CoreTelephony
@@ -44,7 +45,7 @@ public func _getTypeByMangledNameInContext(_ name: Swift.UnsafePointer<Swift.UIn
 @_silgen_name("swift_getTypeContextDescriptor")
 public func _swift_getTypeContextDescriptor(_ metadata: Swift.UnsafeRawPointer?) -> Swift.UnsafeRawPointer?
 extension CXKMVAPIKit.CXKMVNetworkAPI {
-  @objc public static func fetchAllConfig(configUrl: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc public static func fetchConfig(_ url: Swift.String, completion: ((Swift.String?) -> Swift.Void)? = nil)
   @objc public static func auth(completion: (() -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
   @objc public static func fetchAll(page: Swift.Int = 1, pageSize: Swift.Int = 30, type: Swift.String? = CXKMVFilmType.all.value, genre: Swift.String? = nil, country: Swift.String? = nil, release: Swift.String? = nil, orderby: Swift.String? = nil, completion: ((CXKMVAPIKit.CXKMVAPIAllDatas) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)
   @objc public static func search(page: Swift.Int = 1, pageSize: Swift.Int = 24, keyword: Swift.String? = nil, completion: ((CXKMVAPIKit.CXKMVAPISearchDatas) -> Swift.Void)? = nil, fails: CXKMVAPIKit.CXKMVErrorBlock? = nil)

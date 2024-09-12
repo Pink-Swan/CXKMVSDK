@@ -85,8 +85,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func configBtnClick(_ sender: UIButton) {
-        CXKMVNetworkAPI.fetchAllConfig(configUrl: "https://movienote.web.app/config.txt") { value in
-            debugPrint("config result: \(value)")
+        CXKMVNetworkAPI.fetchConfig("https://movienote.web.app/configs.txt") { value in
+            debugPrint("config result: \(String(describing: value))")
         }
     }
 
